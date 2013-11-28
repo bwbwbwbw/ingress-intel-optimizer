@@ -1,6 +1,10 @@
 ingress-intel-optimizer
 =======================
 
+[Click here to install（点击此处安装该插件）](http://userscripts.org/scripts/source/185013.user.js) 
+
+---
+
 Features:
 
 - Optimize ingress/intel loading speed (by blocking YouTube scripts)
@@ -19,7 +23,7 @@ Features:
 
 Known issues:
 
-- Maps are offseted in SATELLITE viewL
+- Maps are offseted in SATELLITE view
 
 已知问题：
 

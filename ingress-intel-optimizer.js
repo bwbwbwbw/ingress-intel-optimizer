@@ -1,8 +1,11 @@
 // ==UserScript==
 // @id             ingress-intel-optimizer
 // @name           Ingress Intel Optimizer
-// @description    optimize loading speed, use Google roads, show portal level, fix map offset in China
-// @version        0.0.1.20131128.2012
+// @description    optimize loading speed, provide Google road map, show portal level, fix map offset in China
+// @author         Breezewish
+// @updateURL      https://userscripts.org/scripts/source/185013.meta.js
+// @downloadURL    https://userscripts.org/scripts/source/185013.user.js
+// @version        0.0.1.20131128.2025
 // @run-at         document-start
 // @include        http://www.ingress.com/intel*
 // @include        https://www.ingress.com/intel*
