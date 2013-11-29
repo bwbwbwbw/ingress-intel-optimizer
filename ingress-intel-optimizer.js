@@ -1,11 +1,11 @@
 // ==UserScript==
 // @id             ingress-intel-optimizer
 // @name           Ingress Intel Optimizer
-// @description    optimize loading speed, provide Google road map, show portal level, fix map offset in China
+// @description    optimize loading speed, provide Google road map, show more portals, highlight neutral portals, show portal level, fix map offset in China
 // @author         Breezewish
 // @updateURL      https://userscripts.org/scripts/source/185013.meta.js
 // @downloadURL    https://userscripts.org/scripts/source/185013.user.js
-// @version        0.0.1.20131128.2025
+// @version        0.0.1.20131129.1129
 // @run-at         document-start
 // @include        http://www.ingress.com/intel*
 // @include        https://www.ingress.com/intel*
@@ -59,7 +59,7 @@ function setup()
         };
 
         // 4. Show portal level & resize portal
-        var lvIcons = ['DlvD4SAh', 'DlvD4h8H', 'DlvD4xgq', 'DlvD5skY', 'DlvD4t8R', 'DlvD4Jf0', 'DlvD5Cie', 'DlvD5jy2', 'DlvD4IdA'];
+        var lvIcons = ['DlAT4NiM', 'DlvD4h8H', 'DlvD4xgq', 'DlvD5skY', 'DlvD4t8R', 'DlvD4Jf0', 'DlvD5Cie', 'DlvD5jy2', 'DlvD4IdA'];
         var lvURL = 'http://pic.yupoo.com/breeswish/{icon}/medish.png';
         var resizeFactor = [0.75, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00];
         //resize
@@ -73,7 +73,7 @@ function setup()
             e[d] || (e[d] = {});
             e[d][res] || (e[d][res] = {});
             e[d][res][level] || (e[d][res][level] = {});
-            e[d][res][level][scaleFactor] || (e[d][res][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(team == nemesis.dashboard.data.Team.NEUTRAL ? "//commondatastorage.googleapis.com/ingress.com/img/map_icons/marker_images/neutral_icon.png" : "//commondatastorage.googleapis.com/ingress.com/img/map_icons/marker_images/" + team.spriteNameString + "_" + res + "res.png", 60, scaleFactorIcon));
+            e[d][res][level][scaleFactor] || (e[d][res][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(team == nemesis.dashboard.data.Team.NEUTRAL ? lvURL.replace('{icon}', lvIcons[0]) : "//commondatastorage.googleapis.com/ingress.com/img/map_icons/marker_images/" + team.spriteNameString + "_" + res + "res.png", 60, scaleFactorIcon));
             return e[d][res][level][scaleFactor];
         };
         //show level
