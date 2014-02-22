@@ -5,7 +5,7 @@
 // @author         Breezewish
 // @updateURL      https://userscripts.org/scripts/source/185013.meta.js
 // @downloadURL    https://userscripts.org/scripts/source/185013.user.js
-// @version        0.0.1.20131129.1129
+// @version        0.0.1.20140222.101500
 // @run-at         document-start
 // @include        http://www.ingress.com/intel*
 // @include        https://www.ingress.com/intel*
@@ -16,6 +16,8 @@
 
 (function(window, undefined)
 {
+
+var imagePrefix = '//dn-iicc.qbox.me';
 
 function setup()
 {
@@ -59,21 +61,18 @@ function setup()
         };
 
         // 4. Show portal level & resize portal
-        var lvIcons = ['DlAT4NiM', 'DlvD4h8H', 'DlvD4xgq', 'DlvD5skY', 'DlvD4t8R', 'DlvD4Jf0', 'DlvD5Cie', 'DlvD5jy2', 'DlvD4IdA'];
-        var lvURL = 'http://pic.yupoo.com/breeswish/{icon}/medish.png';
         var resizeFactor = [0.75, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00];
         //resize
         nemesis.dashboard.render.PortalMarker.prototype.getPortalIcon_ = function() {
             return nemesis.dashboard.render.PortalMarker.getPortalIcon_(this.portal_.team, this.portal_.resonatorCount, this.portal_.level, this.scaleFactor_)
         };
         nemesis.dashboard.render.PortalMarker.getPortalIcon_ = function(team, res, level, scaleFactor) {
-            console.log(team, level, scaleFactor);
             var d = team.spriteNameString, e = nemesis.dashboard.render.PortalMarker.portalIcons_;
             var scaleFactorIcon = scaleFactor * resizeFactor[level];
             e[d] || (e[d] = {});
             e[d][res] || (e[d][res] = {});
             e[d][res][level] || (e[d][res][level] = {});
-            e[d][res][level][scaleFactor] || (e[d][res][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(team == nemesis.dashboard.data.Team.NEUTRAL ? lvURL.replace('{icon}', lvIcons[0]) : "//commondatastorage.googleapis.com/ingress.com/img/map_icons/marker_images/" + team.spriteNameString + "_" + res + "res.png", 60, scaleFactorIcon));
+            e[d][res][level][scaleFactor] || (e[d][res][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(team == nemesis.dashboard.data.Team.NEUTRAL ? imagePrefix + '/lv_0.png' : imagePrefix + '/' + team.spriteNameString + '_' + res + 'res.png', 60, scaleFactorIcon));
             return e[d][res][level][scaleFactor];
         };
         //show level
@@ -81,7 +80,7 @@ function setup()
             var d = team.spriteNameString, e = nemesis.dashboard.render.PortalMarker.glowIcons_;
             e[d] || (e[d] = {});
             e[d][level] || (e[d][level] = {});
-            e[d][level][scaleFactor] || (e[d][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(lvURL.replace('{icon}', lvIcons[level]), 60, Math.max(scaleFactor, 0.7)));
+            e[d][level][scaleFactor] || (e[d][level][scaleFactor] = nemesis.dashboard.render.PortalMarker.createIcon_(imagePrefix + '/lv_' + level.toString() + '.png', 60, Math.max(scaleFactor, 0.7)));
             return e[d][level][scaleFactor];
         };
 
