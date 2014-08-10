@@ -3,8 +3,8 @@
 // @name           Ingress Intel Optimizer
 // @description    optimize loading speed, provide Google road map, show more portals, highlight neutral portals, show portal level, fix map offset in China
 // @author         Breezewish
-// @updateURL      https://userscripts.org/scripts/source/185013.meta.js
-// @downloadURL    https://userscripts.org/scripts/source/185013.user.js
+// @updateURL      https://gist.github.com/breeswish/49bffc27306cd9b51353/raw/ingress-intel-optimizer.meta.js
+// @downloadURL    https://gist.github.com/breeswish/49bffc27306cd9b51353/raw/ingress-intel-optimizer.user.js
 // @version        0.0.1.20140222.101500
 // @run-at         document-start
 // @include        http://www.ingress.com/intel*
