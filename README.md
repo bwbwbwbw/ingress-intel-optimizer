@@ -1,7 +1,7 @@
 ingress-intel-optimizer
 =======================
 
-[Click here to install（点击此处安装该插件）](http://userscripts.org/scripts/source/185013.user.js) 
+[Click here to install（点击此处安装该插件）](https://gist.github.com/breeswish/49bffc27306cd9b51353/raw/ingress-intel-optimizer.user.js) 
 
 ---
 
